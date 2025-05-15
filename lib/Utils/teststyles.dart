@@ -10,10 +10,10 @@ TextStyle headingStyle({double fontSize = 30}) {
   );
 }
 
-TextStyle subHeadingStyle({double fontSize = 20}) {
+TextStyle subHeadingStyle({double fontSize = 20,Color color=textLightGrayColor}) {
   return GoogleFonts.outfit(
     fontSize: fontSize,
     fontWeight: FontWeight.w500,
-    color:textLightGrayColor ,
+    color:color ,
   );
 }

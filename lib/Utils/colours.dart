@@ -10,10 +10,10 @@ const Color textLightColor = Color(0xFF64748b);
 const Color textDarkColor = Color(0xFF111827);
 const Color textLightGrayColor = Color(0xFF9ca3af);
 const Color textDarkGrayColor = Color(0xFF374151);    
-
+const Color textfieldbg = Color(0xFFf1f5f9);
 const Color gradientStart = Color(0xFF6366F1); // #6366f1
 const Color gradientEnd = Color(0xFF4F46E5);   // #4f46e5
-
+const Color whitecolour= Color(0xFFFFFFFF);
 const List<BoxShadow> cardShadows = [
   BoxShadow(
     color: Color.fromRGBO(0, 0, 0, 0.05),
