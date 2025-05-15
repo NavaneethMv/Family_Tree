@@ -1,13 +1,15 @@
 import 'package:family_tree/Utils/colours.dart';
+import 'package:family_tree/Utils/size.dart';
 import 'package:flutter/material.dart';
 
 import '../../../Utils/teststyles.dart';
 
-class LoginButton extends StatelessWidget {
-  const LoginButton({
+class GlobalIconButton extends StatelessWidget {
+   GlobalIconButton({
     super.key,
+    required this.content,
   });
-
+String content ;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,12 +26,20 @@ class LoginButton extends StatelessWidget {
           ),
         ),
         child: Center(
-          child: Text(
-            'Login',
-            style: subHeadingStyle(
-              fontSize: 23,
-              color: whitecolour,
-            ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Icon(Icons.add,
+                  color: whitecolour, size: 35),
+                  sizedBox_w10,
+              Text(
+                content,
+                style: subHeadingStyle(
+                  fontSize: 23,
+                  color: whitecolour,
+                ),
+              ),
+            ],
           ),
         ),
       ),
