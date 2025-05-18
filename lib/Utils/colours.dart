@@ -18,6 +18,7 @@ const Color blackcolour= Color(0xFF000000);
 const Color offwhite= Color(0xFFCFCFCF);
 const Color Lightindigo= Color(0xFFD4D4FA);
 const Color membercardcolour= Color(0xFFF8F8F8);
+final Color darkWhite = Color(0xFFEEEEEE);
 const List<BoxShadow> cardShadows = [
   BoxShadow(
     color: Color.fromRGBO(0, 0, 0, 0.05),

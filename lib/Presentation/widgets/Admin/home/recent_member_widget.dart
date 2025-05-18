@@ -5,13 +5,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../../../Admin/admin_main_home.dart';
+
 class RecentitemWidget extends StatelessWidget {
-  RecentitemWidget({
-    super.key,
-    required this.title,
-    required this.icon,
-    required this.backgroundColor
-  });
+  RecentitemWidget(
+      {super.key,
+      required this.title,
+      required this.icon,
+      required this.backgroundColor});
   String title;
   IconData icon;
   Color backgroundColor;
@@ -29,7 +31,7 @@ class RecentitemWidget extends StatelessWidget {
                 )),
             GestureDetector(
               onTap: () {
-                GoRouter.of(context).go('/memberlistscreen');
+                AdminMainHome.selectedIndexNotifier.value = 2;
               },
               child: Text('See All',
                   style: GoogleFonts.outfit(
@@ -43,7 +45,10 @@ class RecentitemWidget extends StatelessWidget {
         sizedBox_h30,
         ...List.generate(
           3,
-          (index) => RecentMemberCard(icon: icon,backgroundColor: backgroundColor,),
+          (index) => RecentMemberCard(
+            icon: icon,
+            backgroundColor: backgroundColor,
+          ),
         )
       ],
     );
@@ -51,62 +56,63 @@ class RecentitemWidget extends StatelessWidget {
 }
 
 class RecentMemberCard extends StatelessWidget {
-   RecentMemberCard({
-    super.key,
-   required this.icon ,
-   required this.backgroundColor 
-  });
+  RecentMemberCard(
+      {super.key, required this.icon, required this.backgroundColor});
   IconData icon;
   Color backgroundColor;
   @override
   Widget build(BuildContext context) {
-    return Card(
-  elevation: 3,
-  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-  color: membercardcolour,
-  child: Padding(
-    padding: const EdgeInsets.all(12),
-    child: Row(
-      children: [
-        CircleAvatar(
-          radius: 30,
-          backgroundColor: backgroundColor,
-          child: Icon(
-            icon,
-            color: whitecolour,
-            size: 35,
-          ),
-        ),
-        const SizedBox(width: 16),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+    return GestureDetector(
+      onTap: () {
+        GoRouter.of(context).push('/memberdetailsscreen');
+      },
+      child: Card(
+        elevation: 3,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        color: membercardcolour,
+        child: Padding(
+          padding: const EdgeInsets.all(12),
+          child: Row(
             children: [
-              Text('John Doe',
-                  style: GoogleFonts.outfit(
-                      fontSize: 18,
-                      color: textColor,
-                      fontWeight: FontWeight.w500)),
-              Text('Kannur, Kerala',
-                  style: GoogleFonts.outfit(
-                      fontSize: 14,
-                      color: textColor,
-                      fontWeight: FontWeight.w400)),
+              CircleAvatar(
+                radius: 30,
+                backgroundColor: backgroundColor,
+                child: Icon(
+                  icon,
+                  color: whitecolour,
+                  size: 35,
+                ),
+              ),
+              const SizedBox(width: 16),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('John Doe',
+                        style: GoogleFonts.outfit(
+                            fontSize: 18,
+                            color: textColor,
+                            fontWeight: FontWeight.w500)),
+                    Text('Kannur, Kerala',
+                        style: GoogleFonts.outfit(
+                            fontSize: 14,
+                            color: textColor,
+                            fontWeight: FontWeight.w400)),
+                  ],
+                ),
+              ),
+              const SizedBox(width: 16),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  CupertinoIcons.forward,
+                  color: Colors.grey,
+                ),
+              ),
             ],
           ),
         ),
-        const SizedBox(width: 16),
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            CupertinoIcons.forward,
-            color: Colors.grey,
-          ),
-        ),
-      ],
-    ),
-  ),
-);
-
+      ),
+    );
   }
 }

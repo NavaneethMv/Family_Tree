@@ -63,7 +63,8 @@ class AddMemberScreen extends StatelessWidget {
                     ],
                   ),
                   addMemberTextfieldWidget('Occupation', 'Enter occupation'),
-                  addMemberTextfieldWidget('Location', 'City, Country'),
+                  addMemberTextfieldWidget('Work Location', 'City, Country'),
+                   addMemberTextfieldWidget('Address', 'Enter Address',height: 120),
                   addMemberTextfieldWidget(
                       'Phone Number', 'Enter phone number'),
                      
@@ -75,8 +76,7 @@ class AddMemberScreen extends StatelessWidget {
                       sizedBox_h5,
                       DropdownTextFieldWidget(options: relationship_option,),
                       sizedBox_h20,
-                  addMemberTextfieldWidget('Notes', 'Additional information',
-                      height: 130),
+                 
                 ],
               ),
             )

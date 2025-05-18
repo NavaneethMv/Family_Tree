@@ -1,5 +1,5 @@
 import 'package:family_tree/Presentation/Admin/screens/dashboard.dart';
-import 'package:family_tree/Presentation/Admin/screens/memberScreen.dart';
+import 'package:family_tree/Presentation/Admin/screens/memberListScreen.dart';
 import 'package:family_tree/Utils/colours.dart';
 import 'package:family_tree/Utils/size.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +9,7 @@ import 'package:google_fonts/google_fonts.dart';
 class AdminMainHome extends StatelessWidget {
   AdminMainHome({super.key});
 
-  final ValueNotifier<int> _selectedIndexNotifier = ValueNotifier<int>(0);
+ static final ValueNotifier<int> selectedIndexNotifier = ValueNotifier<int>(0);
 
   final List<IconData> _icons = [
     Icons.home,
@@ -36,13 +36,13 @@ class AdminMainHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ValueListenableBuilder<int>(
-        valueListenable: _selectedIndexNotifier,
+        valueListenable: selectedIndexNotifier,
         builder: (context, index, _) => _pages[index],
       ),
       bottomNavigationBar: SizedBox(
         height: 70,
         child: ValueListenableBuilder<int>(
-          valueListenable: _selectedIndexNotifier,
+          valueListenable: selectedIndexNotifier,
           builder: (context, selectedIndex, _) => Padding(
   padding: const EdgeInsets.symmetric(horizontal: 16.0),
   child: Row(
@@ -51,18 +51,21 @@ class AdminMainHome extends StatelessWidget {
     children: [
       _navItemFixedWidth(index: 0, selectedIndex: selectedIndex),
       _navItemFixedWidth(index: 1, selectedIndex: selectedIndex),
-      SizedBox(
-        height: 50,
-        width: 50,
-        child: Center(
-          child: FloatingActionButton(
-            onPressed: () {
-              GoRouter.of(context).push('/addmemberscreen');
-            },
-            shape: const CircleBorder(),
-            elevation: 4,
-            backgroundColor: primaryColor,
-            child: const Icon(Icons.add, size: 35, color: whitecolour),
+      Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: SizedBox(
+          height: 50,
+          width: 50,
+          child: Center(
+            child: FloatingActionButton(
+              onPressed: () {
+                GoRouter.of(context).push('/addmemberscreen');
+              },
+              shape: const CircleBorder(),
+              elevation: 4,
+              backgroundColor: primaryColor,
+              child: const Icon(Icons.add, size: 35, color: whitecolour),
+            ),
           ),
         ),
       ),
@@ -94,7 +97,7 @@ Widget _navItemFixedWidth({required int index, required int selectedIndex}) {
   }) {
     final isSelected = selectedIndex == index;
     return GestureDetector(
-      onTap: () => _selectedIndexNotifier.value = index,
+      onTap: () => selectedIndexNotifier.value = index,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
