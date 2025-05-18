@@ -14,11 +14,14 @@ class MemberDetailsScreen extends StatelessWidget {
       return Scaffold(
         floatingActionButton: FloatingActionButton(
           backgroundColor: primaryColor,
-
-          onPressed: (){
-GoRouter.of(context).push('/addmemberscreen');
-        },
-       child: const Icon(Icons.edit,color: whitecolour,),),
+          onPressed: () {
+            GoRouter.of(context).push('/addmemberscreen');
+          },
+          child: const Icon(
+            Icons.edit,
+            color: whitecolour,
+          ),
+        ),
         backgroundColor: darkWhite,
         body: ListView(
           children: [
@@ -30,11 +33,8 @@ GoRouter.of(context).push('/addmemberscreen');
               style: subHeadingStyle(color: blackcolour, fontSize: 23),
             ),
             const Personaldetailscontainer(),
-            
-                   
           ],
         ),
-       
       );
     });
   }

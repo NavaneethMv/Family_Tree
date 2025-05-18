@@ -25,8 +25,10 @@ final BoxConstraints constraints;
             ),
           ),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start ,
             children: [
               const SizedBox(width: 5),
+              
               IconButton(
                 onPressed: () {
                   Navigator.pop(context);

@@ -15,14 +15,14 @@ class AdminMainHome extends StatelessWidget {
     Icons.home,
     Icons.family_restroom,
     Icons.groups,
-    Icons.settings,
+    Icons.event,
   ];
 
   final List<String> labels = [
     'Home',
     'Family',
     'Members',
-    'Settings',
+    'Events',
   ];
 
   final List<Widget> _pages = [
