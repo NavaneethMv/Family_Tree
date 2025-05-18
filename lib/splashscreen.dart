@@ -15,7 +15,7 @@ class FamilySplashScreen extends StatefulWidget {
 class _FamilySplashScreenState extends State<FamilySplashScreen> {
   @override
   void initState() {
-    // TODO: implement initState
+
     super.initState();
     Timer(const Duration(seconds: 3), () {
       getdata(context);
@@ -34,11 +34,11 @@ class _FamilySplashScreenState extends State<FamilySplashScreen> {
     bool? adminstatus = sharedpref.getBool('isadminlogedin');
     bool? memberstatus = sharedpref.getBool('ismemberlogedin');
     if (adminstatus == true) {
-      GoRouter.of(context).push('/adminDashboard');
+      GoRouter.of(context).pushReplacement('/adminbottomnavbar');
     } else if (memberstatus == true) {
-      GoRouter.of(context).push('/memberDashboard');
+      GoRouter.of(context).pushReplacement('/memberDashboard');
     } else {
-      GoRouter.of(context).push('/login');
+      GoRouter.of(context).pushReplacement('/login');
     }
   }
 }

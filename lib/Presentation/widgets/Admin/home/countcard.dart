@@ -13,14 +13,17 @@ Container CountContainer(BoxConstraints constraints,String title) {
       child:  Padding(
         padding: const EdgeInsets.only(left: 10  ,top: 15),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               title,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
               style: subHeadingStyle(color: textLightColor),
             ),
             Text(
               '34',
-              style: subHeadingStyle(color: primaryColor, fontSize: 40), 
+              style: subHeadingStyle(color: primaryColor, fontSize: 30), 
             ),
           ],
         ),

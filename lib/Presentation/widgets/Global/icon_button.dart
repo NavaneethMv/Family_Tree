@@ -30,12 +30,12 @@ String content ;
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Icon(Icons.add,
-                  color: whitecolour, size: 35),
+                  color: whitecolour, size: 30),
                   sizedBox_w10,
               Text(
                 content,
                 style: subHeadingStyle(
-                  fontSize: 23,
+                  fontSize: 20,
                   color: whitecolour,
                 ),
               ),

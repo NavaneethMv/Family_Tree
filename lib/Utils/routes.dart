@@ -1,3 +1,5 @@
+import 'package:family_tree/Presentation/Admin/admin_main_home.dart';
+import 'package:family_tree/Presentation/Admin/screens/add_member_screen.dart';
 import 'package:family_tree/Presentation/Admin/screens/dashboard.dart';
 import 'package:family_tree/Presentation/Admin/screens/memberScreen.dart';
 import 'package:family_tree/Presentation/Login/login.dart';
@@ -28,6 +30,14 @@ final GoRouter approuter = GoRouter(
       path: '/memberlistscreen',
       builder: (context, state) => const MemberListscreen(),
     ),
+    GoRoute(
+      path: '/adminbottomnavbar',
+      builder: (context, state) =>  AdminMainHome(),
+    ),
+    GoRoute(path: '/addmemberscreen',
+      builder: (context, state) => const  AddMemberScreen(),
+    ),
+    
   ],
 );
 

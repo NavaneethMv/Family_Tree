@@ -77,7 +77,7 @@ class LoginPage extends StatelessWidget {
                           SharedPreferences sharedPreferences =
                             await SharedPreferences.getInstance();
                         sharedPreferences.setBool('ismemberlogedin', true);
-                          GoRouter.of(context).push('/memberDashboard');
+                          GoRouter.of(context).push('/adminbottomnavbar');
                         } else {
                           SharedPreferences sharedPreferences =
                             await SharedPreferences.getInstance();

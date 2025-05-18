@@ -1,19 +1,20 @@
 import 'package:family_tree/Utils/colours.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-TextStyle headingStyle({double fontSize = 30}) {
-  return GoogleFonts.outfit(
+TextStyle headingStyle({double fontSize = 30,color=primaryColor}) {
+  return TextStyle(
+  fontFamily: 'Outfit',
     fontSize: fontSize,
     fontWeight: FontWeight.bold,
-    color: primaryColor,
+    color: color,
   );
 }
 
-TextStyle subHeadingStyle({double fontSize = 20,Color color=textLightGrayColor}) {
-  return GoogleFonts.outfit(
+TextStyle subHeadingStyle({double fontSize = 19,Color color=textLightGrayColor}) {
+  return TextStyle(
+  fontFamily: 'Outfit',
     fontSize: fontSize,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.bold,
     color:color ,
   );
 }

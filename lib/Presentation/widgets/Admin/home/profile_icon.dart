@@ -15,7 +15,7 @@ class ProfileIcon extends StatelessWidget {
       radius: constraints.maxWidth * 0.059, // responsive radius
       backgroundColor: const Color.fromARGB(255, 214, 216, 220),
       child: Icon(
-        Icons.person_2_outlined,
+        Icons.person,
         size: constraints.maxWidth * 0.1, // responsive icon size
         color: primaryColor,
       ),

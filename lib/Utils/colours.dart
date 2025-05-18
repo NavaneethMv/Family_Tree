@@ -14,7 +14,10 @@ const Color textfieldbg = Color(0xFFf1f5f9);
 const Color gradientStart = Color(0xFF6366F1);
 const Color gradientEnd = Color(0xFF4F46E5);  
 const Color whitecolour= Color(0xFFFFFFFF);
+const Color blackcolour= Color(0xFF000000);
+const Color offwhite= Color(0xFFCFCFCF);
 const Color Lightindigo= Color(0xFFD4D4FA);
+const Color membercardcolour= Color(0xFFF8F8F8);
 const List<BoxShadow> cardShadows = [
   BoxShadow(
     color: Color.fromRGBO(0, 0, 0, 0.05),

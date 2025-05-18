@@ -5,24 +5,32 @@ import '../../../Utils/teststyles.dart';
 class Textfield_widget extends StatelessWidget {
   Textfield_widget({
     super.key,
-    required this.isObscure,
+     this.isObscure=false,
     required this.hintText,
+    this.height=65.0,
   });
-  bool isObscure = true;
+  bool ?isObscure = true;
   final String? hintText;
+  double height;
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 65,
+      height: height,
+      width: double.infinity,
       decoration: BoxDecoration(
         color: textfieldbg,
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: cardShadows,
+        borderRadius: BorderRadius.circular( 15),
+        border: Border.all(
+          color: Lightindigo,
+          width:2,
+        ),
       ),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: TextField(
-          obscureText: isObscure,
+         
+          maxLines: null,
+          obscureText: isObscure ?? true,
           style: const TextStyle(
             fontSize: 20,
             color: textDarkColor,

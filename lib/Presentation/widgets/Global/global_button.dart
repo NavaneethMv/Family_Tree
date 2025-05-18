@@ -7,8 +7,10 @@ class GlobalButton extends StatelessWidget {
    GlobalButton({
     super.key,
     required this.content,
+    this.width,
   });
 String content ;
+double? width=double.infinity;
   @override
   Widget build(BuildContext context) {
     return Padding(
