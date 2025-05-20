@@ -8,14 +8,14 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../../Utils/colours.dart';
 import '../../../Utils/teststyles.dart';
 
-class SettingsPage extends StatefulWidget {
-  const SettingsPage({super.key});
+class MemberSettingsPage extends StatefulWidget {
+  const MemberSettingsPage({super.key});
 
   @override
-  State<SettingsPage> createState() => _SettingsPageState();
+  State<MemberSettingsPage> createState() => _MemberSettingsPageState();
 }
 
-class _SettingsPageState extends State<SettingsPage> {
+class _MemberSettingsPageState extends State<MemberSettingsPage> {
   bool ?showChangePassword = false;
 
   @override
@@ -60,20 +60,8 @@ class _SettingsPageState extends State<SettingsPage> {
             child: Column(
               children: [
                 sizedBox_h30,
-                
-              settings_card(
-                    action: 'change_password',
-                    context: context,
-                    iconbgclr: Colors.green[200]!,
-                    buttonclr: Colors.green,
-                    buttontext: 'Change',
-                    constraints: constraints,
-                    title: 'Password',
-                    subtitle: 'Change your password',
-                    icon: Icons.lock_outline,
-                    iconcolor: whitecolour,
-                  ),
-                sizedBox_h20,
+               
+                 
                 settings_card(
                   context: context,
                   action: 'logout',
@@ -131,9 +119,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   borderRadius: BorderRadius.all(Radius.circular(20))),
               child: TextButton(
                   onPressed: () {
-                    action == 'change_password'
-                        ? showChangePasswordDialog(context)
-                        : logout(context);
+                    logout(context);
                   },
                   child: Text(
                     buttontext,
@@ -229,7 +215,7 @@ void logout(BuildContext context) async {
   SharedPreferences _sharedpref = await SharedPreferences.getInstance();
 
 
- await _sharedpref.setBool('isadminlogedin', false);
+ await _sharedpref.setBool('ismemberlogedin', false);
 
   GoRouter.of(context).go('/login');
   print('member${_sharedpref.getBool('ismemberlogedin')}');

@@ -1,3 +1,5 @@
+import 'package:family_tree/Presentation/Admin/admin_main_home.dart';
+import 'package:family_tree/Presentation/Member/member_main_home.dart';
 import 'package:family_tree/Utils/colours.dart';
 import 'package:family_tree/Utils/size.dart';
 import 'package:family_tree/Utils/teststyles.dart';
@@ -6,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../Admin/admin_main_home.dart';
+import '../../../../Utils/constants.dart';
 
 class RecentitemWidget extends StatelessWidget {
   RecentitemWidget(
@@ -31,8 +33,17 @@ class RecentitemWidget extends StatelessWidget {
                 )),
             GestureDetector(
               onTap: () {
-                AdminMainHome.selectedIndexNotifier.value = 2;
-              },
+                if (title == 'Recent Events' && isadmin == true) {
+                 AdminMainHome.selectedIndexNotifier.value = 3;
+                } else if (title == 'Recent Members' && isadmin == true) {
+                  AdminMainHome.selectedIndexNotifier.value = 2;
+                  
+                } else if (title == 'Recent Members' && ismember == true) {
+                  MemberMainHome.selectedmemberIndexNotifier.value = 2;
+                } else if (title == 'Recent Events' && ismember == true) {
+                  MemberMainHome.selectedmemberIndexNotifier.value = 3;
+                }},
+             
               child: Text('See All',
                   style: GoogleFonts.outfit(
                       decoration: TextDecoration.underline,

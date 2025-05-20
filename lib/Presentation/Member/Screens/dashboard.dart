@@ -3,25 +3,24 @@ import 'package:family_tree/Presentation/Widgets/Admin/home/recent_member_widget
 import 'package:family_tree/Utils/colours.dart';
 import 'package:family_tree/Utils/size.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 import '../../Widgets/Admin/home/countcard.dart';
-import '../../Widgets/Global/icon_button.dart';
 
-class AdminDashboard extends StatelessWidget {
-  const AdminDashboard({super.key});
+class MemberDashboard extends StatelessWidget {
+  const MemberDashboard({super.key});
 
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       return Scaffold(
         backgroundColor: Colors.white,
+
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.only(left: 15.0, right: 15, top: 10),
             child: SingleChildScrollView(
               child: Column(children: [
-                Admin_Dashboard_Header(constraints: constraints,role: 'Admin',),
+                Admin_Dashboard_Header(constraints: constraints,role: "Member",),
                 sizedBox_h30,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -30,13 +29,8 @@ class AdminDashboard extends StatelessWidget {
                     CountContainer(constraints, 'Upcoming Events'),
                   ],
                 ),
-                sizedBox_h20,
-                GestureDetector(
-                  onTap: () => GoRouter.of(context).push('/addmemberscreen'),
-                  child: GlobalIconButton(
-                    content: 'Add New Member',
-                  ),
-                ),
+                
+                
                 sizedBox_h20,
                 RecentitemWidget(
                   title: 'Recent Members',

@@ -1,11 +1,13 @@
+import 'package:family_tree/Presentation/Admin/Screens/add_member_screen.dart';
+import 'package:family_tree/Presentation/Admin/Screens/dashboard.dart';
+import 'package:family_tree/Presentation/Global/memberDetailsScreen.dart';
+import 'package:family_tree/Presentation/Global/memberListScreen.dart';
+import 'package:family_tree/Presentation/Admin/Screens/settingsPage.dart';
 import 'package:family_tree/Presentation/Admin/admin_main_home.dart';
-import 'package:family_tree/Presentation/Admin/screens/add_member_screen.dart';
-import 'package:family_tree/Presentation/Admin/screens/dashboard.dart';
-import 'package:family_tree/Presentation/Admin/screens/memberDetailsScreen.dart';
-import 'package:family_tree/Presentation/Admin/screens/memberListScreen.dart';
-import 'package:family_tree/Presentation/Admin/screens/settingsPage.dart';
 import 'package:family_tree/Presentation/Login/login.dart';
-import 'package:family_tree/Presentation/Member/memberdashboard.dart';
+import 'package:family_tree/Presentation/Member/Screens/dashboard.dart';
+import 'package:family_tree/Presentation/Member/Screens/settingsPage.dart';
+import 'package:family_tree/Presentation/Member/member_main_home.dart';
 import 'package:family_tree/splashscreen.dart';
 import 'package:go_router/go_router.dart';
 
@@ -22,7 +24,7 @@ final GoRouter approuter = GoRouter(
     ),
     GoRoute(
       path: '/memberDashboard',
-      builder: (context, state) => const Memberdashboard(),
+      builder: (context, state) => const MemberDashboard(),
     ),
     GoRoute(
       path: '/adminDashboard',
@@ -43,7 +45,16 @@ final GoRouter approuter = GoRouter(
       builder: (context, state) => const  MemberDetailsScreen(),
     ),
     GoRoute(path: '/settings',
-    builder: (context, state) => SettingsPage(),)
+    builder: (context, state) => SettingsPage(),),
+GoRoute(
+      path: '/membersettings',
+      builder: (context, state) =>  MemberSettingsPage(),
+    ),
+GoRoute(
+      path: '/memberbottomnavbar',
+      builder: (context, state) =>  MemberMainHome(),
+    ),
+    
   ],
 );
 

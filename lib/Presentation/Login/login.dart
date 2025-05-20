@@ -1,15 +1,10 @@
-import 'package:family_tree/Presentation/Widgets/Global/global_button.dart';
 import 'package:family_tree/Presentation/widgets/Login/adminlogin.dart';
 import 'package:family_tree/Presentation/widgets/Login/loginheader.dart';
 import 'package:family_tree/Presentation/widgets/Login/memberlogin.dart';
 import 'package:family_tree/Utils/colours.dart';
 import 'package:family_tree/Utils/size.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
-
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -60,7 +55,7 @@ class LoginPage extends StatelessWidget {
                     ),
                     sizedBox_h20,
                     SizedBox(
-                      height: height * 0.25,
+                      height: height * 0.5,
                       child: const TabBarView(
                         children: [
                           MemberLogin(),
@@ -68,25 +63,7 @@ class LoginPage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    GestureDetector(
-                      onTap: () async {
-                        
-
-                        final tabIndex = DefaultTabController.of(context).index;
-                        if (tabIndex == 0) {
-                          SharedPreferences sharedPreferences =
-                            await SharedPreferences.getInstance();
-                        sharedPreferences.setBool('ismemberlogedin', true);
-                          GoRouter.of(context).push('/adminbottomnavbar');
-                        } else {
-                          SharedPreferences sharedPreferences =
-                            await SharedPreferences.getInstance();
-                        sharedPreferences.setBool('isadminlogedin', true);
-                          GoRouter.of(context).push('/adminDashboard');
-                        }
-                      },
-                      child:  GlobalButton(content: 'Login',),
-                    ),
+                  
                     sizedBox_h10
                   ],
                 ),

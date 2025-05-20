@@ -1,6 +1,9 @@
 import 'package:family_tree/Utils/size.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
+import '../Global/global_button.dart';
 import '../Global/textfieldwidget.dart';
 
 class Adminlogin extends StatelessWidget {
@@ -22,7 +25,19 @@ class Adminlogin extends StatelessWidget {
             hintText: 'Password',
           ),
           sizedBox_h20,
-          
+          GestureDetector(
+            onTap: () async {
+              SharedPreferences sharedPreferences =
+                  await SharedPreferences.getInstance();
+             await sharedPreferences.setBool('ismemberlogedin', false);
+             await sharedPreferences.setBool('isadminlogedin', true);
+
+              GoRouter.of(context).push('/adminbottomnavbar');
+            },
+            child: GlobalButton(
+              content: 'Login',
+            ),
+          ),
         ],
       ),
     );

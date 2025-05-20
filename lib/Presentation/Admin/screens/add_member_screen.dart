@@ -57,26 +57,58 @@ class AddMemberScreen extends StatelessWidget {
                       ),
                       sizedBox_w10,
                       Expanded(
-                        child: addMemberTextfieldWidget('Date of Birth', 
-                            'DD/MM/YYYY'), 
+                        child: addMemberTextfieldWidget(
+                            'Date of Birth', 'DD/MM/YYYY'),
+                      ),
+                    ],
+                  ),
+                  Center(
+                    child: Text(
+                      '**Below 2 fields are optional**',
+                      style: subHeadingStyle(color: primaryColor, fontSize: 15),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  sizedBox_h5,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: addMemberTextfieldWidget(
+                            'Date of Marriage', 'DD/MM/YYYY'),
+                      ),
+                      sizedBox_w10,
+                      Expanded(
+                        child: addMemberTextfieldWidget(
+                            'Date of Death', 'DD/MM/YYYY'),
                       ),
                     ],
                   ),
                   addMemberTextfieldWidget('Occupation', 'Enter occupation'),
                   addMemberTextfieldWidget('Work Location', 'City, Country'),
-                   addMemberTextfieldWidget('Address', 'Enter Address',height: 120),
+                  addMemberTextfieldWidget('Address', 'Enter Address',
+                      height: 120),
                   addMemberTextfieldWidget(
                       'Phone Number', 'Enter phone number'),
-                     
-                       Text('Relationship',style: subHeadingStyle(color: textColor,fontSize: 18),),
-                      sizedBox_h5,
-                      DropdownTextFieldWidget(options: relationship_option,), 
-                      sizedBox_h20,
-                       Text('Related To',style: subHeadingStyle(color: textColor,fontSize: 18),),
-                      sizedBox_h5,
-                      DropdownTextFieldWidget(options: relationship_option,),
-                      sizedBox_h20,
-                 
+                  Text(
+                    'Relationship',
+                    style: subHeadingStyle(color: textColor, fontSize: 18),
+                  ),
+                  sizedBox_h5,
+                  DropdownTextFieldWidget(
+                    options: relationship_option,
+                  ),
+                  sizedBox_h20,
+                  Text(
+                    'Related To',
+                    style: subHeadingStyle(color: textColor, fontSize: 18),
+                  ),
+                  sizedBox_h5,
+                  DropdownTextFieldWidget(
+                    options: relationship_option,
+                  ),
+                  sizedBox_h20,
                 ],
               ),
             )
@@ -103,4 +135,12 @@ class AddMemberScreen extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
+
+
+
 

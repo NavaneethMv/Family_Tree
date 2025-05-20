@@ -29,7 +29,8 @@ class Textfield_widget extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: TextField(
          
-          maxLines: null,
+         maxLines: (isObscure ?? true) ? 1 : 5,
+
           obscureText: isObscure ?? true,
           style: const TextStyle(
             fontSize: 20,
