@@ -1,11 +1,20 @@
+import 'package:family_tree/data/services/authentication_service.dart';
+import 'package:family_tree/data/services/supabase_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'routes/routes.dart';
 import 'routes/app_routes.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await initializeServices();
+
+  runApp(const MyApp());
+}
+
+Future<void> initializeServices() async {
+  await Get.putAsync(() => SupabaseService().init());
+  await Get.putAsync(() => AuthenticationService().init());
 }
 
 class MyApp extends StatelessWidget {
@@ -14,6 +23,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      title: "Family tree",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
